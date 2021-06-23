@@ -1,0 +1,18 @@
+{} = optional
+[] = mandatory
+/// - disabled for the moment
+
+flip/toss/coin {number of times: default = 1}
+salut
+ping
+///clear [number of messages / all]
+join
+leave
+audio
+capsipajura
+blackjack/cards [list of players]
+insult
+dog
+fox
+cat
+haha
