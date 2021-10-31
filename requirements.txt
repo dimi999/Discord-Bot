@@ -1,3 +1,6 @@
 git+https://github.com/Rapptz/discord.py
 PyNaCl==1.4.0
 requests==2.25.1
+discord-buttons==0.5
+discord-components==2.1.0
+discord.py==1.7.2
