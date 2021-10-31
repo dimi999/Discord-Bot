@@ -11,6 +11,7 @@ class Flip(commands.Cog):
         self.client = client
 
     @commands.command(aliases=['toss', 'coin'])
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def flip(self, ctx, amount=1):
 
         try:
@@ -35,13 +36,13 @@ class Flip(commands.Cog):
                     P = P + 1
             if C > P:
                 await ctx.send(file=discord.File("images/cap.png"))
-                await ctx.send('Cap!')
+                await ctx.send('Heads!')
             elif P > C:
                 await ctx.send(file=discord.File("images/pajura.png"))
-                await ctx.send('Pajura!')
+                await ctx.send('Tails!')
             else:
-                await ctx.send('Egalitate!')
-            await ctx.send(f'Cap: {C}; Pajura: {P}')
+                await ctx.send('Tie!')
+            await ctx.send(f'Heads: {C}; Tails: {P}')
 
         except:
             await ctx.send('E doar vina lui Dimi')

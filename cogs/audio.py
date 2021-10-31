@@ -24,24 +24,27 @@ class Audio(commands.Cog):
         print(c)
 
     @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def join(self, ctx):
         try:
             if not ctx.voice_client:
                 channel = ctx.message.author.voice.channel
                 await channel.connect()
             else:
-                await ctx.send('Already connected')
+                await ctx.send('Already connected.')
         except:
             await ctx.send('You must be in a voice channel!')
 
     @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def leave(self, ctx):
         if ctx.voice_client:
             await ctx.voice_client.disconnect()
         else:
-            await ctx.send('I am not connected')
+            await ctx.send('I am not connected.')
 
     @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def capsipajura(self, ctx):
 
         await self.load_audio()
@@ -60,6 +63,7 @@ class Audio(commands.Cog):
 
 
     @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def haha(self, ctx):
 
         await self.load_audio()
@@ -79,6 +83,7 @@ class Audio(commands.Cog):
 
 
     @commands.command()
+    @commands.cooldown(1, 5, commands.BucketType.guild)
     async def audio(self, ctx):
 
         await self.load_audio()
